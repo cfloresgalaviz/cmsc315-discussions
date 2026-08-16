@@ -6,19 +6,19 @@ This assignment explored object-oriented programming (OOP) concepts in Python, i
 
 ## What I Built
 
-### Parent Class — `MarvelCharacter`
+### Parent Class — `MarvelCharacter` (TODO 1)
 
 I defined `MarvelCharacter` as the base class every other type in the file builds on. It has a class variable (`universe = "Marvel Universe"`) shared by every instance, two instance variables (`name`, `age`) set in the constructor, and a `describe()` method that returns a formatted summary. The constructor validates that `age` is non-negative and raises `ValueError` otherwise. I also added a `__str__` method so `print()`/`str()` on a character shows the friendly `describe()` output instead of Python's default object representation.
 
-### Child Class — `Avenger`
+### Child Class — `Avenger` (TODO 2)
 
 `Avenger` inherits from `MarvelCharacter` and extends it: a new class variable (`team = "Avengers"`), two new instance variables (`power_level`, validated to be positive, and `powers`, a mutable list of abilities), and a new method (`use_signature_move()`). Its constructor calls `super().__init__(name, age)` to reuse the parent's setup instead of duplicating it. `describe()` is overridden to extend the parent's version via `super().describe()` rather than replace it outright, appending team and power-level details.
 
-### Namespace Demonstration — `demonstrate_namespaces()`
+### Namespace Demonstration — `demonstrate_namespaces()` (TODO 3)
 
 This function creates two `Avenger` objects (Iron Man and Captain America) and shows the difference between the class namespace and each instance's namespace. It reads `team` both through the class (`Avenger.team`) and through an instance (`avenger1.team`), then adds a `mentor` attribute to only one of the two objects. Printing `__dict__` on each object shows that the extra attribute exists only on the one it was assigned to, while `Avenger.__dict__.keys()` shows what lives in the class's own namespace, separate from either instance.
 
-### Copy Demonstration — `demonstrate_copying()`
+### Copy Demonstration — `demonstrate_copying()` (TODO 4)
 
 This function creates one `Avenger` (Thor) with a mutable `powers` list, then makes a shallow copy with `copy()` and a deep copy with `deepcopy()`. After appending a new power to the original's list, the shallow copy reflects the change (it shares the same underlying list object), while the deep copy does not (it has its own independent list). I used comments in the code to explain why.
 
@@ -30,16 +30,13 @@ Since both constructors validate their input and raise `ValueError` on bad data,
 
 Beyond the required TODOs, I built a small scenario that mixes both classes: a team "roster" list containing a plain `MarvelCharacter` (Doctor Doom, a nod to the upcoming Fantastic Four/Doom movie) alongside several `Avenger` objects. It loops over the whole list and sums everyone's `age`, which only works uniformly because `age` and `describe()` are defined on the shared parent class.
 
-### `main()`
+### `main()` (TODO 5)
 
 Ties everything together: creates one `MarvelCharacter` and one `Avenger` object directly to demonstrate inheritance, then calls each of the four functions above in sequence.
 
 ## Real-World Application
 
-The `MarvelCharacter`/`Avenger` relationship mirrors how a smart home is organized: a general "smart device" concept (power state, name) is the shared blueprint, while a specific device like a thermostat inherits that baseline and adds its own specialized behavior — the same way `Avenger` inherited `name`/`age` from `MarvelCharacter` and added `use_signature_move()`. The error-handling piece maps to a real annoyance with smart-home devices: a well-built one reports a problem and keeps the rest of the system running, while a poorly-built one lets one bad input crash everything. That's what the `try/except ValueError` blocks in `demonstrate_error_handling()` prevent.
+A system I work with that mirrors this design is a computer network. Routers, firewalls, switches, servers, and other network devices have different responsibilities, but they share common characteristics such as network interfaces, addresses, configuration settings, and status information, the same way `MarvelCharacter` holds the data every `Avenger` needs. In an object-oriented design, a general `NetworkDevice` class could contain those shared properties while classes such as `Firewall`, `Switch`, and `Server` inherit them and add their own specialized functionality, just as `Avenger` extended `MarvelCharacter`.
 
-## How to Run
+Error handling is especially important in a system like this: one invalid configuration should generate an error that can be identified and corrected instead of taking down the entire system. That's exactly what the `try/except ValueError` blocks in `demonstrate_error_handling()` demonstrate, rejecting bad input at the source instead of letting it crash everything downstream, the same difference as a manageable configuration problem versus a failure that affects an entire network.
 
-```bash
-python3 unit1_discussion.py
-```
