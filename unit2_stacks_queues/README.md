@@ -41,8 +41,3 @@ Both structures grow linearly with the number of items stored — O(n) space. Th
 
 A stack fits situations where the most recent action needs to be undone or revisited first — browser back buttons, undo/redo history in an editor, or function call stacks. A queue fits situations where fairness and order of arrival matter — support tickets, print jobs, or task scheduling, where the first request in should be the first one handled.
 
-## How to Run
-
-```bash
-python3 unit2_discussion.py
-```
