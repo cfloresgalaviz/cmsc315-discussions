@@ -15,9 +15,15 @@ This repository contains my weekly discussion assignments for CMSC 315. Each wee
 ├── unit2_stacks_queues/
 │   ├── README.md
 │   └── unit2_discussion.py
-└── unit3_lists/
+├── unit3_lists/
+│   ├── README.md
+│   └── unit3_discussion.py
+├── unit4_trees/
+│   ├── README.md
+│   └── unit4_discussion.py
+└── unit5_searching_analysis/
     ├── README.md
-    └── unit3_discussion.py
+    └── unit5_discussion.py
 ```
 
 ## Projects
@@ -33,3 +39,11 @@ Implemented a `Stack` (LIFO) and `Queue` (FIFO) from scratch, demonstrated with 
 ### Unit 3; List Operations (`unit3_lists/`)
 
 Implemented `insert_at()`, `delete_at()`, and `search_value()` demonstrated with a Pokemon trainer's 6-slot party, covering insertion/deletion/search at the beginning, middle, and end, a full-party rejection edge case, and a linked-list-vs-array-list performance comparison. See [`unit3_lists/README.md`](unit3_lists/README.md) for the full write-up.
+
+### Unit 4; Binary Search Trees (`unit4_trees/`)
+
+Implemented a recursive `insert()`, `search()`, and `inorder()` on a Binary Search Tree, demonstrated with a Pac-Man arcade high-score leaderboard, covering tree construction, sorted in-order traversal, search hits/misses, and edge cases (empty tree, single node, duplicate insert). See [`unit4_trees/README.md`](unit4_trees/README.md) for the full write-up.
+
+### Unit 5; Search Algorithms (`unit5_searching_analysis/`)
+
+Implemented `linear_search()` and `binary_search()`, demonstrated with a small sorted "Liked Songs" list, a 100,000-track sorted streaming catalog, edge cases (empty catalog, single song, first/last position), and an unsorted "Recently Played" list showing binary search returning an incorrect result when the sorted-data assumption is violated. See [`unit5_searching_analysis/README.md`](unit5_searching_analysis/README.md) for the full write-up.
