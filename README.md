@@ -21,9 +21,15 @@ This repository contains my weekly discussion assignments for CMSC 315. Each wee
 ├── unit4_trees/
 │   ├── README.md
 │   └── unit4_discussion.py
-└── unit5_searching_analysis/
+├── unit5_searching_analysis/
+│   ├── README.md
+│   └── unit5_discussion.py
+├── unit6_hash_tables/
+│   ├── README.md
+│   └── unit6_discussion.py
+└── unit7_sorting/(WORKING)
     ├── README.md
-    └── unit5_discussion.py
+    └── unit7_discussion.py
 ```
 
 ## Projects
@@ -36,14 +42,18 @@ Explored inheritance, class/instance namespaces, and shallow vs. deep copying us
 
 Implemented a `Stack` (LIFO) and `Queue` (FIFO) from scratch, demonstrated with a browser back-button history and a customer support ticket queue, including empty-collection and single-item edge cases. See [`unit2_stacks_queues/README.md`](unit2_stacks_queues/README.md) for the full write-up.
 
-### Unit 3; List Operations (`unit3_lists/`)
+### Unit 3 - List Operations (`unit3_lists/`)
 
 Implemented `insert_at()`, `delete_at()`, and `search_value()` demonstrated with a Pokemon trainer's 6-slot party, covering insertion/deletion/search at the beginning, middle, and end, a full-party rejection edge case, and a linked-list-vs-array-list performance comparison. See [`unit3_lists/README.md`](unit3_lists/README.md) for the full write-up.
 
-### Unit 4; Binary Search Trees (`unit4_trees/`)
+### Unit 4 - Binary Search Trees (`unit4_trees/`)
 
 Implemented a recursive `insert()`, `search()`, and `inorder()` on a Binary Search Tree, demonstrated with a Pac-Man arcade high-score leaderboard, covering tree construction, sorted in-order traversal, search hits/misses, and edge cases (empty tree, single node, duplicate insert). See [`unit4_trees/README.md`](unit4_trees/README.md) for the full write-up.
 
-### Unit 5; Search Algorithms (`unit5_searching_analysis/`)
+### Unit 5 - Search Algorithms (`unit5_searching_analysis/`)
 
 Implemented `linear_search()` and `binary_search()`, demonstrated with a small sorted "Liked Songs" list, a 100,000-track sorted streaming catalog, edge cases (empty catalog, single song, first/last position), and an unsorted "Recently Played" list showing binary search returning an incorrect result when the sorted-data assumption is violated. See [`unit5_searching_analysis/README.md`](unit5_searching_analysis/README.md) for the full write-up.
+
+### Unit 6 - Hash Tables (`unit6_hash_tables/`)
+
+Used a Python dictionary to model a trainer's Pokedex keyed by Pokemon name, demonstrating insert/lookup/update/delete operations and edge cases specific to dictionaries (missing-key lookup, safe release of a missing Pokemon, and "training" a missing Pokemon silently catching it instead). See [`unit6_hash_tables/README.md`](unit6_hash_tables/README.md) for the full write-up.
